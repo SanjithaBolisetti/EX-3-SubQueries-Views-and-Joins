@@ -123,13 +123,12 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
 ### QUERY:
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/f7d0aa2b-5634-479a-b59c-a53b20b9c83f)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/85279ec0-ce78-42a4-838a-67b5f9b20b86)
 
-update EMP set SAL=SAL*1.1 WHERE JOB='clerk';
-
-create view empv8 as select EMPNO,ENAME,SAL,JOB from EMP;
 
 ### OUTPUT:
-![Updation of view](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/530cd4f3-d2c0-4f31-b4bd-2e3ab9f4f5da)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/b625a27d-998f-4be9-858e-55af8c3377fb)
 
 ## Create a Customer1 Table
 ```sql
@@ -162,50 +161,43 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 ### Q7) Write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
 
 ### QUERY:
-
-SELECT salesman1.name AS "Salesman", customer1.cust_name AS "Customer Name", salesman1.city AS "City" from salesman1 INNER JOIN customer1 ON salesman1.city=customer1.city;
-
-
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/68805255-9c11-4714-b14d-a3b1f8f6d615)
 
 ### OUTPUT:
-![INNER JOIN](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/1fba472e-6ee7-44c3-a88a-c1bc11529f66)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/c2542522-5171-4fdd-8a48-b28dfffb4803)
+
 
 ### Q8) Write a SQL query to find salespeople who received commissions of more than 13 percent from the company. Return Customer Name, customer city, Salesman, commission.
 
 
 ### QUERY:
-
-SELECT customer1.cust_name AS "Customer Name",customer1.city AS "Customer City",salesman1.name AS "Salesman",salesman1.commission AS "Commission" FROM salesman1 INNER JOIN customer1 ON salesman1.salesman_id=customer1.salesman_id WHERE salesman1.commission>0.13;
-
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/f5d1c611-3691-4786-b3ae-b4f5942bd3a2)
 
 ### OUTPUT:
-![INNER JOIN](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/b47e084e-c5b8-4f1d-bb21-eefd997ee417)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/68c7db4d-3e2f-4418-ad90-618f10be4510)
+
+
 
 ### Q9) Perform Natural join on both tables
 
 ### QUERY:
-
-SELECT customer1.cust_name AS "Customer Name",customer1.city AS "Customer City",salesman1.name AS "Salesman",salesman1.commission AS "Commission" FROM salesman1 INNER JOIN customer1 ON salesman1.salesman_id=customer1.salesman_id WHERE salesman1.commission>0.13;
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/451108aa-c337-4239-a59d-98933d25f497)
 
 
 ### OUTPUT:
-![Natural join](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/fd850c65-82e4-4b72-a3ec-79624608186d)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/8476b872-d542-4fc0-bc2d-2284af1ffd82)
 
 ### Q10) Perform Left and right join on both tables
 
 ### QUERY FOR LEFT JOIN:
-
-
-SELECT customer1.cust_name AS "Customer Name",customer1.city AS "Customer City",salesman1.name AS "Salesman",salesman1.commissioSELECT customer1.cust_name AS "Customer Name",customer1.city AS "Customer City",salesman1.name AS "Salesman",salesman1.commission AS "Commission" FROM salesman1 INNER JOIN customer1 ON salesman1.salesman_id=customer1.salesman_id WHERE salesman1.commission>0.13;
-
-
-select * from customer1 natural join salesman1;
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/420c51ca-5b16-4ff3-b4e5-614cb7f40deb)
 
 ### OUTPUT FOR LEFT JOIN:
-![LEFT JOIN](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/172580a3-5886-4abd-bea4-06a12024749a)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/38d755f6-55a4-4197-8cea-0189b9754ab5)
+
 ### QUERY FOR RIGHT JOIN:
- 
-SELECT * FROM salesman1 RIGHT JOIN customer1 ON salesman1.salesman_id=customer1.salesman_id;
+ ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/fe2f0e03-19fb-4f4f-b8f7-f998d210f640)
+
 
 ### OUTPUT FOR RIGHT JOIN:
 ![RIGHT JOIN](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/bb3089be-49fd-4c4d-b375-2198191c60af)
