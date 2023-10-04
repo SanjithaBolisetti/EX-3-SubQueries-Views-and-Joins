@@ -52,11 +52,11 @@ VALUES (7934, 'MILLER', 'CLERK', 7782, TO_DATE('23-JAN-82', 'DD-MON-RR'), 1300, 
 ```
 
 ## Create department table
-```
+```sql
 CREATE TABLE DEPT (DEPTNO NUMBER(2) PRIMARY KEY,DNAME VARCHAR2(14),LOC VARCHAR2(13));
 ```
 ## Insert the values in the department table
-```
+```sql
 INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (10, 'ACCOUNTING', 'NEW YORK');
 
 INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (20, 'RESEARCH', 'DALLAS');
@@ -70,53 +70,54 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 
 
 ### QUERY:
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/e4e16512-5589-47b5-b840-65030cead687)
 
-
-CREATE VIEW details AS SELECT ENAME FROM EMP WHERE SAL >(select SAL from EMP where EMPNO=7566);
 
 ### OUTPUT:
-![Listing](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/33dd7af3-fc05-45a1-8a04-f7beec82079b)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/3295da85-11b2-4e5f-81bd-6558670504c5)
+
 
 ### Q2) List the ename,job,sal of the employee who get minimum salary in the company.
 
 ### QUERY:
  
-CREATE VIEW minimum AS select ENAME,JOB,SAL from EMP where SAL =(select MIN(SAL) from EMP);
-
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/2668d2d4-e9e1-4eb8-a664-e552c2f44d52)
 
 ### OUTPUT:
-![Listing](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/2f4b3986-1376-497b-a855-1bf278179c28)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/88cd752a-6f09-4904-955e-12b764b55555)
+
 
 ### Q3) List ename, job of the employees who work in deptno 10 and his/her job is any one of the job in the department ‘SALES’.
 
 ### QUERY:
-
-select ENAME,JOB from EMP where  DEPTNO=10 AND JOB='SALESMAN';
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/945f7753-bb0c-4d13-9d1e-192f33c9c4bb)
 
 ### OUTPUT:
-![Listing](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/fa89b60e-88f1-43e9-94cd-c134fc5fef4f)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/8aab52cc-39cf-4615-9998-ab95658abc0d)
 
 
 
 ### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 10.
 
 ### QUERY:
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/640c35ff-3f87-4a47-afcc-f7e108be6a00)
 
-create view empv5 as select EMPNO,ENAME,JOB from EMP where DEPTNO=10;
 
 
 ### OUTPUT:
-![Creation of view](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/c89ffaf8-6ef2-46c8-8668-1662612f1d47)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/089f1ffd-69a9-4d88-9eff-56809bb64554)
+
 
 ### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 30. Also display the contents of the view.
 
 ### QUERY:
 
-create view empv30 AS select EMPNO,ENAME,SAL from EMP where DEPTNO=30;
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/7bbb9835-c2fc-4b58-8c0e-2bc548594fd6)
 
 
 ### OUTPUT:
-![Creation of view](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/7288ea10-645c-4fa7-a44e-0d3d1ce8772e)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/9af52641-5377-4b88-9ca7-ee71984945a7)
+
 
 
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
@@ -131,11 +132,11 @@ create view empv8 as select EMPNO,ENAME,SAL,JOB from EMP;
 ![Updation of view](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/530cd4f3-d2c0-4f31-b4bd-2e3ab9f4f5da)
 
 ## Create a Customer1 Table
-sql
+```sql
 CREATE TABLE Customer1 (customer_id INT,cust_name VARCHAR(20),city VARCHAR(20),grade INT,salesman_id INT);
-
+```
 ## Inserting Values to the Table
-sql
+```sql
 INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3002, 'Nick Rimando', 'New York', 100, 5001);
 INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3007, 'Brad Davis', 'New York', 200, 5001);
 INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3005, 'Graham Zusi', 'California', 200, 5002);
@@ -144,20 +145,20 @@ INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(
 INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3009, 'Geoff Cameron', 'Berlin', 100, 5003);
 INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3003, 'Jozy Altidor', 'Moscow', 200, 5007);
 INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3001, 'Brad Guzan', 'London', NULL, 5005);
-
+```
 ## Create a Salesperson1 table
-sql
+```sql
 CREATE TABLE Salesman1 (salesman_id INT,name VARCHAR(20),city VARCHAR(20),commission DECIMAL(4,2));
-
+```
 ## Inserting Values to the Table
-sql
+```sql
 INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5001, 'James Hoog', 'New York', 0.15);
 INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5002, 'Nail Knite', 'Paris', 0.13);
 INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5005, 'Pit Alex', 'London', 0.11);
 INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5006, 'Mc Lyon', 'Paris', 0.14);
 INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5007, 'Paul Adam', 'Rome', 0.13);
 INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson Hen', 'San Jose', 0.12);
-
+```
 ### Q7) Write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
 
 ### QUERY:
