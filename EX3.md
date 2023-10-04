@@ -181,23 +181,29 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 ### Q9) Perform Natural join on both tables
 
 ### QUERY:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/451108aa-c337-4239-a59d-98933d25f497)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/7fcfbd4c-bd3c-4c7e-9b2b-720718622795)
+
 
 
 ### OUTPUT:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/8476b872-d542-4fc0-bc2d-2284af1ffd82)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/82740a45-c451-4ffc-b409-6a2a9ffbf29d)
+
 
 ### Q10) Perform Left and right join on both tables
 
 ### QUERY FOR LEFT JOIN:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/420c51ca-5b16-4ff3-b4e5-614cb7f40deb)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/3aeaa116-596c-4c69-a704-b3e99a6a0643)
+
 
 ### OUTPUT FOR LEFT JOIN:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/38d755f6-55a4-4197-8cea-0189b9754ab5)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/71b68869-7330-4956-8092-9a6f170cee97)
+
 
 ### QUERY FOR RIGHT JOIN:
- ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/fe2f0e03-19fb-4f4f-b8f7-f998d210f640)
-
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/94a258f3-7c70-4bb5-afea-de18d4b98010)
 
 ### OUTPUT FOR RIGHT JOIN:
-![RIGHT JOIN](https://github.com/Jeevapriya14/EX-3-SubQueries-Views-and-Joins/assets/121003043/bb3089be-49fd-4c4d-b375-2198191c60af)
+![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/2edaa8be-a8a3-4c11-b9ac-df615b9f8a09)
+
+### Result:
+SQL queries executed successfully.
