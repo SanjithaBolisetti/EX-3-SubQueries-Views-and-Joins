@@ -1,5 +1,5 @@
 # EX 3 SubQueries, Views and Joins 
-
+Date:
 
 ## Create employee Table
 ```sql
@@ -70,8 +70,9 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 
 
 ### QUERY:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/e4e16512-5589-47b5-b840-65030cead687)
-
+```
+CREATE VIEW details AS SELECT ENAME FROM EMP WHERE SAL > (select SAL from EMP where EMPNO=7566);
+```
 
 ### OUTPUT:
 ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/3295da85-11b2-4e5f-81bd-6558670504c5)
@@ -80,8 +81,9 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q2) List the ename,job,sal of the employee who get minimum salary in the company.
 
 ### QUERY:
- 
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/2668d2d4-e9e1-4eb8-a664-e552c2f44d52)
+ ```
+CREATE VIEW minimun AS select ENAME,JOB,SAL from EMP where SAL = (select MIN(SAL) from EMP);
+```
 
 ### OUTPUT:
 ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/88cd752a-6f09-4904-955e-12b764b55555)
@@ -90,8 +92,9 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q3) List ename, job of the employees who work in deptno 10 and his/her job is any one of the job in the department ‘SALES’.
 
 ### QUERY:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/945f7753-bb0c-4d13-9d1e-192f33c9c4bb)
-
+```
+select ENAME,JOB from EMP where DEPTNO=10 AND JOB='SALESMAN';
+```
 ### OUTPUT:
 ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/8aab52cc-39cf-4615-9998-ab95658abc0d)
 
@@ -100,9 +103,9 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 10.
 
 ### QUERY:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/640c35ff-3f87-4a47-afcc-f7e108be6a00)
-
-
+```
+CREATE VIEW EMPV5 AS SELECT EMPNO,ENAME,JOB FROM EMP WHERE DEPTNO=10;
+``` 
 
 ### OUTPUT:
 ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/089f1ffd-69a9-4d88-9eff-56809bb64554)
@@ -111,8 +114,9 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 30. Also display the contents of the view.
 
 ### QUERY:
-
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/7bbb9835-c2fc-4b58-8c0e-2bc548594fd6)
+```
+CREATE VIEW EMPV30 AS SELECT EMPNO,EMPNAME,SAL FROM EMP WHERE DEPT=30;
+```
 
 
 ### OUTPUT:
@@ -123,8 +127,9 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
 ### QUERY:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/f7d0aa2b-5634-479a-b59c-a53b20b9c83f)
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/85279ec0-ce78-42a4-838a-67b5f9b20b86)
+UPDATE EMP SET SAL=SAL*1.1 WHERE JOB='CLERK';
+CREATE VIEW EMPV8 AS SELECT EMPN0,ENAME,SAL,JOB FROM EMP;
+```
 
 
 ### OUTPUT:
@@ -161,7 +166,9 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 ### Q7) Write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
 
 ### QUERY:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/68805255-9c11-4714-b14d-a3b1f8f6d615)
+```
+SELECT SALESMAN1.NAME AS 'SALESMAN',CUSTOMER1.CUST_NAME AS 'CUSTOMER NAME', SALESMAN1.CITY AS 'CITY' FROM SALESMAN1 INNER JOIN CUSTOMER1 ON SALESMAN1.CITY=CUSTOMER1.CITY;
+```
 
 ### OUTPUT:
 ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/c2542522-5171-4fdd-8a48-b28dfffb4803)
@@ -171,7 +178,9 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 
 
 ### QUERY:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/f5d1c611-3691-4786-b3ae-b4f5942bd3a2)
+```
+SELECT CUSTOMER1.CUST_NAME AS 'CUSTOMER NAME',CUSTOMER1.CITY AS 'CUSTOMER CITY',SALESMAN1.NAME AS 'SALESMAN',SALESMAN1.COMMISSION AS 'COMMISSION' FROM SALESMAN1 INNER JOIN CUSTOMER1 ON SALESMAN1.SALESMAN_ID=CUSTOMER1.SALESMAN_ID WHERE SALESMAN1.COMMISSION>0.13;
+```
 
 ### OUTPUT:
 ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/68c7db4d-3e2f-4418-ad90-618f10be4510)
@@ -179,9 +188,9 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 
 
 ### Q9) Perform Natural join on both tables
-
-### QUERY:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/7fcfbd4c-bd3c-4c7e-9b2b-720718622795)
+```
+SELECT * FROM CUSTOMER1 NATURAL JOIN SALESMAN1;
+```
 
 
 
@@ -192,8 +201,9 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 ### Q10) Perform Left and right join on both tables
 
 ### QUERY FOR LEFT JOIN:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/3aeaa116-596c-4c69-a704-b3e99a6a0643)
-
+```
+SELECT * FROM SALESMAN1 LEFT JOIN CUSTOMER1 ON SALESMAN1.SALESMAN_ID=CUSTOMER1.SALESMAN_ID;
+```
 
 ### OUTPUT FOR LEFT JOIN:
 ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/4355d463-42b2-4039-bd0c-30caa91376d0)
@@ -201,7 +211,9 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 
 
 ### QUERY FOR RIGHT JOIN:
-![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/94a258f3-7c70-4bb5-afea-de18d4b98010)
+```
+SELECT * FROM SALESMAN1 RIGHT JOIN CUSTOMER1 ON SALESMAN1.SALESMAN_ID=CUSTOMER1.SALESMAN_ID;
+```
 
 ### OUTPUT FOR RIGHT JOIN:
 ![image](https://github.com/SanjithaBolisetti/EX-3-SubQueries-Views-and-Joins/assets/119393633/2edaa8be-a8a3-4c11-b9ac-df615b9f8a09)
